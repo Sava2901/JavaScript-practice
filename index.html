@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title class="text">Rick, Paper, Scissors</title>
-    <!-- <script src="./index-script.js" defer></script> -->
+    <script src="./index-script.js" defer></script>
     <link rel="stylesheet" href="./index-style.css">
 </head>
 
@@ -15,29 +15,34 @@
         </div>
         <div class="text headerPart">Rock, Paper, Scissors</div>
         <div class="headerPart">
-            <button class="headerButton text secondaryButton">Home</button>
-            <button class="headerButton text secondaryButton">Reset Score</button>
+            <button class="headerButton text button home">Home</button>
+            <button class="headerButton text button resetScore">Reset Score</button>
         </div>
     </div>
 
     <div id="main"><!-- main -->
         <div><!-- Difficulty selection -->
             <div class="text">Difficulty:</div>
-            <div>
-                <button class="text primaryButton">
-                    Normal
-                </button>
-                <button class="text primaryButton">
-                    Impossible
-                </button>
+            <div class="difficultySelector">
+                <span class="text difficultyText">Normal</span>
+
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+
+                <span class="text difficultyText">Impossible</span>
             </div>
         </div>
 
         <div><!-- The game itself-->
-            <div class="text">Score:</div>
+            <div class="scoreHolder">
+                <div class="text">Score:</div>
+                <div class="text score">You: 0 | Computer: 0</div>
+            </div>
             <div class="optionsVerticalSeparator">
                 <div class="optionHolder">
-                    <button class="primaryButton optionButton">
+                    <button class="button optionButton rock">
                         <img class="optionImage" src="./Images/Rock.png" alt="Rock">
                     </button>
                     <div class="text underImage">Rock</div>
@@ -45,14 +50,14 @@
 
                 <div class="optionsHorizontalSeparator">
                     <div class="optionHolder">
-                        <button class="primaryButton optionButton">
+                        <button class="button optionButton paper">
                             <img class="optionImage" src="./Images/Paper.png" alt="Paper">
                         </button>
                         <div class="text underImage">Paper</div>
                     </div>
 
                     <div class="optionHolder">
-                        <button class="primaryButton optionButton">
+                        <button class="button optionButton scissors">
                             <img class="optionImage" src="./Images/Scissors.png" alt="Scissors">
                         </button>
                         <div class="text underImage">Scissors</div>
@@ -60,6 +65,8 @@
                 </div>
             </div>
         </div>
+
+        <img class="triangle" src="./Images/Triangle.png" alt="Triangle">
 
     </div>
 

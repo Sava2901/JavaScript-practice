@@ -1,120 +1,217 @@
-html{
-    background-color: #393e27;
+html {
+  background-color: rgb(33, 36, 37);
 }
 
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-#header{
-    background-color: #393e27;
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    align-items: center;
+#header {
+  height: 15vh;
+  background-color: rgb(33, 36, 37);
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  align-items: center;
 }
 
-#header > div:nth-child(2){
-    margin: 20px;
-    font-weight: 600;
-    font-size: larger;
-    padding:20px;
+#header > div:nth-child(2) {
+  margin: 20px;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 20px;
 }
 
-#header > div:nth-child(3){
-    display: flex;
-    flex-wrap: nowrap;
+#header > div:nth-child(3) {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-#main{
-    margin-top: auto;
-    background-color: #646b49;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#main {
+  margin: auto;
+  background-color: #1b1e1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#main > div:nth-child(1) > div:nth-child(1){
-    padding: 10px;
-    font-weight: 400;
-    font-size: large;
-    display: flex;
-    justify-content: center;
+.difficultySelector{
+  margin-left:20px;
+  display: flex;
+  align-items: center;
 }
 
-#main > div:nth-child(2) > div:nth-child(1){
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
+.difficultyText{
+  padding:25px;
 }
 
-#footer{
-    background-color: #393e27;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: auto;
-    min-height: 75px;
+.scoreHolder{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.headerPart{
-    width:220px;
+#main > div:nth-child(1) > div:nth-child(1) {
+  padding: 10px;
+  font-weight: 400;
+  font-size: large;
+  display: flex;
+  justify-content: center;
 }
 
-.logoImage{
-    width: 50px;
-    height: 50px;
+#main > div:nth-child(2) > div:nth-child(1) {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
-.headerButton{
-    margin: 10px;
+#footer {
+  height: 15vh;
+  background-color: rgb(33, 36, 37);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: auto;
+  min-height: 75px;
 }
 
-.optionsVerticalSeparator{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.headerPart {
+  width: 220px;
 }
 
-.optionsHorizontalSeparator{
-    display: flex;
-    flex-direction: row;
+.logoImage {
+  width: 75px;
+  height: 75px;
 }
 
-.optionHolder{
-    margin: 120px;
-    margin-top: 80px;
+.headerButton {
+  margin: 10px;
 }
 
-.optionButton{
-    width: 70px;
-    height: 70px;
+.optionsVerticalSeparator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.optionImage{
-    width: 100%;
-    height: 85%;
+.optionsHorizontalSeparator {
+  display: flex;
+  flex-direction: row;
 }
 
-.underImage{
-    text-align: center;
-    padding-top: 20px;
+.optionHolder {
+  margin: 120px;
+  margin-top: 80px;
 }
 
-.primaryButton{
-    background-color: #cda34f;
-    border-radius: 5px;
+.optionButton {
+  width: 70px;
+  height: 70px;
 }
 
-.secondaryButton{
-    background-color: #565c3d;
-    border-radius: 5px;
+.optionImage {
+  width: 100%;
+  height: 85%;
 }
 
-.text{
-    color: #e8e9db;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+.underImage {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.triangle {
+  position: absolute;
+  margin-top: 350px;
+  width: 300px;
+  height: 300px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(33, 36, 37);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: rgb(33, 36, 37);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+  box-shadow: rgba(24, 26, 27, 0.7) -4px -4px 14px,
+    rgba(24, 26, 27, 0.5) -4px -4px 10px, rgba(24, 26, 27, 0.07) 4px 4px 8px,
+    rgba(0, 0, 0, 0.15) 4px 4px 10px;
+}
+
+.button:hover {
+  box-shadow: -2px -2px 6px rgba(24, 26, 27, 0.6),
+    -2px -2px 4px rgba(24, 26, 27, 0.4), 2px 2px 2px rgba(24, 26, 27, 0.05),
+    2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  box-shadow: inset -4px -4px 14px rgba(24, 26, 27, 0.7),
+    inset -4px -4px 10px rgba(24, 26, 27, 0.5),
+    inset 4px 4px 8px rgba(24, 26, 27, 0.07),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.text {
+  color: #e8e9db;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
