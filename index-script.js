@@ -7,6 +7,8 @@ const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const difficulty = document.querySelector(".switch");
 const score = document.querySelector(".score");
+const choiceImage = document.querySelector(".computerChoice");
+const reset = document.querySelector(".resetScore");
 
 function computerChoice() {
     if (difficultyValue) {
@@ -14,7 +16,6 @@ function computerChoice() {
 
         switch (random) {
             case 0:
-                alert("Computer chose rock");
                 if (userOption == 0) {
                     alert("You made a draw!");
                 }
@@ -28,7 +29,6 @@ function computerChoice() {
                 }
                 break;
             case 1:
-                alert("Computer chose paper");
                 if (userOption == 0) {
                     alert("You lost!");
                     computerScore++;
@@ -42,7 +42,6 @@ function computerChoice() {
                 }
                 break;
             case 2:
-                alert("Computer chose scissors");
                 if (userOption == 0) {
                     alert("You won!");
                     youScore++;
@@ -58,6 +57,8 @@ function computerChoice() {
             default:
                 break;
         }
+
+        showComputerChoice(random);
     }
     else {
         switch (userOption) {
@@ -73,6 +74,7 @@ function computerChoice() {
             default:
                 break;
         }
+        showComputerChoice((userOption + 1) % 3);
         computerScore++;
     }
 }
@@ -80,6 +82,29 @@ function computerChoice() {
 function updateScore() {
     score.textContent = `You: ${youScore} | Computer: ${computerScore}`;
 }
+
+
+function showComputerChoice(value){
+
+    if(value == 0) {
+        choiceImage.src = "./Images/Rock.png";
+    }
+    else if(value == 1) {
+        choiceImage.src = "./Images/Paper.png";
+    }
+    else if(value == 2) {
+        choiceImage.src = "./Images/Scissors.png";
+    }    
+}
+
+function formatImage(){
+    choiceImage.style.height = "50px";
+    choiceImage.style.position = "absolute";
+    choiceImage.style.marginTop = "500px";
+}
+
+choiceImage.src = "./Images/Logo.png";
+formatImage();
 
 difficulty.addEventListener("change", () => {
     difficultyValue = !difficultyValue;
@@ -103,3 +128,8 @@ scissors.addEventListener("click", () => {
     updateScore();
 });
 
+reset.addEventListener("click", () => {
+    youScore = 0;
+    computerScore = 0;
+    updateScore();
+});
